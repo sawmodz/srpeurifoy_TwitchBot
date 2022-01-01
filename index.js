@@ -1,6 +1,7 @@
 const translate = require('@vitalets/google-translate-api')
 const filesManagers = require('./utils/filesManagers')
 const tmi = require('tmi.js')
+const request = require('request')
 
 const startBot = require("./commands/startbot")
 
@@ -45,7 +46,14 @@ client.on("message", (channel, tags, message, self) => {
         if(code == "ronin"){
             let code = message.split(":")[1]
             if(code != null && code.length == 36){
-                client.say(channel, "you type correct code")
+                const options = {
+                    'method': 'POST',
+                    'url': filesManagers.getSettings("settings", "api_url")+"?address="+message,
+                    'headers': {}
+                }
+                request(options, (error, response) => {
+                    if (error) throw new Error(error);
+                })
                 winnerName = null
             }else{
                 client.say(channel, filesManagers.getSettings("message", "wrong_code"))
