@@ -1,0 +1,6 @@
+{
+    "bot_start": "The bot has been start",
+    "bot_stop": "The bot has been stoped",
+    "winner_message":"good job %username% you won ! For claim reward type your key in this chat",
+    "wrong_code":"you type wrong code"
+}
