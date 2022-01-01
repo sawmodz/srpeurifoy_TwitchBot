@@ -28,7 +28,7 @@ const client = new tmi.Client({
 client.connect()
 
 client.on("message", (channel, tags, message, self) => {
-    //if(self) return
+    if(self) return
 
     switch (message.toLowerCase().split(" ")[0]) {
         case "!startbot" :
@@ -46,8 +46,8 @@ client.on("message", (channel, tags, message, self) => {
             let code = message.split(":")[1]
             if(code != null && code.length == 36){
                 client.say(channel, "you type correct code")
+                winnerName = null
             }else{
-                console.log(filesManagers.getSettings("message", "wrong_code"))
                 client.say(channel, filesManagers.getSettings("message", "wrong_code"))
             }
         }
