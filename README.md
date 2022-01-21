@@ -19,6 +19,6 @@ type ```node ./index.js```to start your bot
 after this all is good
 
 ## Problem
-if you have a problem you can contact me on **fiverr** or via discord **Blizz#6699**
+if you have a problem you can contact me on **[fiverr](https://www.fiverr.com/blizz_)** or via discord **Blizz#6699**
 
 
